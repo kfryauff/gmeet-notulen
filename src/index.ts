@@ -1,2 +1,2 @@
-export { Notulen } from "./notulen";
-export { MeetingResult, NotulenInterface } from "./interfaces";
+export { NoteTaker } from "./note-taker";
+export { MeetingResult, NoteTakerInterface } from "./interfaces";

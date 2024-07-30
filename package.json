@@ -1,7 +1,7 @@
 {
-  "name": "@tarikhagustia/notulen",
-  "version": "1.4.1",
-  "description": "A simple Google meet note taking app with AI transcription",
+  "name": "@kfryauff/note-taker",
+  "version": "1.0.0",
+  "description": "Google meet note taking app with AI transcription",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

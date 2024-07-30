@@ -1,14 +1,16 @@
-import { Notulen } from "../src";
+import { NoteTaker } from "../src";
 import { MeetingResult } from "../src/interfaces";
 
 async function main() {
-  const client = new Notulen({
+  const client = new NoteTaker({
     name: "My Assistant",
-    googleMeetUrl: "https://meet.google.com/bvk-ryhf-tkk",
+    googleMeetUrl: "https://meet.google.com/hto-hnid-czw",
     language: "id-ID",
-    geminiApiKey: "API KEYS",
+    geminiApiKey: "AIzaSyBa67WrZWhG7XFbO3E87bNdizQWDBOcrLo",
     debug: true,
-    recordMeeting: false,
+    recordMeeting: true,
+    recordingLocation: './out',
+    prompt: 'You are an Assistant Note Taker, based on the meeting results in the form of the transcript below, please make a summary of the meeting\n',
     streamConfig: {
       audio: true,
       video: true,

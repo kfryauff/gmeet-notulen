@@ -1,8 +1,8 @@
 import { executablePath } from "puppeteer";
 import {
   MeetingResult,
-  NotulenConfig,
-  NotulenInterface,
+  NoteTakerConfig,
+  NoteTakerInterface,
   Transribe,
 } from "./interfaces";
 import { launch, getStream, getStreamOptions, wss } from "puppeteer-stream";
@@ -37,10 +37,10 @@ export enum RecordingStatus {
   STOPPED = "stopped",
 }
 
-export class Notulen extends EventEmitter implements NotulenInterface {
+export class NoteTaker extends EventEmitter implements NoteTakerInterface {
   private browser: Browser;
   private page: Page;
-  private config: NotulenConfig;
+  private config: NoteTakerConfig;
   private transcribe: Transribe[] = [];
   private videoOutput: string;
   private videoFileStream: any;
@@ -50,11 +50,11 @@ export class Notulen extends EventEmitter implements NotulenInterface {
   // video stream can be public
   private videoStream: Transform;
 
-  constructor(config: NotulenConfig) {
+  constructor(config: NoteTakerConfig) {
     super();
     // check if the prompt is not provided
     if (!config.prompt) {
-      config.prompt = `Kamu adalah seorang Asisten Note Takker, berdasarkan hasil meeting berupa transribe dibawah ini tolong buatkan summary meeting\n`;
+      config.prompt = `You are a Note Taker Assistant. Based on the meeting transcript below, please create a meeting summary.\n`;
     }
 
     // check if the recording location is not provided
@@ -62,7 +62,6 @@ export class Notulen extends EventEmitter implements NotulenInterface {
       config.recordingLocation = "./";
     } else {
       // check if recordingLocation is existing and create it otherwise
-
       if (!existsSync(config.recordingLocation)) {
         mkdirSync(config.recordingLocation);
       }

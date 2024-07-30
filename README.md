@@ -1,6 +1,6 @@
-# Notulen - private Google meet AI Note Taker
+# NoteTaker - private Google meet AI Note Taker
 
-Notulen is a private Google meet AI Note Taker that takes notes during a Google meet session. It uses the Puppeteer to join the meeting and use Puppeteer steam to convert the screen to video. The caption is generated using Google meet caption by default. Once the meeting is done the transribe is sent to the Google gemini API to generate the notes.
+NoteTaker is a private Google meet AI Note Taker that takes notes during a Google meet session. It uses the Puppeteer to join the meeting and use Puppeteer steam to convert the screen to video. The caption is generated using Google meet caption by default. Once the meeting is done the transribe is sent to the Google gemini API to generate the notes.
 
 ## Known issue
 - Google meet HTML element always changing, sometimes the bot can't join the meeting because the element is not found.
@@ -11,27 +11,27 @@ Notulen is a private Google meet AI Note Taker that takes notes during a Google 
 Install via npm or yarn
 
 ```bash
-npm install @tarikhagustia/notulen
+npm install @kfryauff/note-taker
 or
-yarn add @tarikhagustia/notulen
+yarn add @kfryauff/note-taker
 ```
 
 then you can use it in your project
 
 ```javascript
-const { Notulen } = require("@tarikhagustia/notulen");
+const { NoteTaker } = require("@kfryauff/note-taker");
 // or using ES6
-import { Notulen } from "@tarikhagustia/notulen";
+import { NoteTaker } from "@kfryauff/note-taker";
 ```
 
 ## Usage
 
 ```javascript
-import { Notulen } from "@tarikhagustia/notulen";
-import { MeetingResult } from "@tarikhagustia/notulen";
+import { NoteTaker } from "@kfryauff/note-taker";
+import { MeetingResult } from "@kfryauff/note-taker";
 
 async function main() {
-  const client = new Notulen({
+  const client = new NoteTaker({
     debug: false, // debug mode to show the browser
     name: "My Assistant", // Bot name
     googleMeetUrl: "https://meet.google.com/xxx-xxx-xxx", // your google meet link
@@ -71,11 +71,11 @@ main();
 
 ## Contributing
 
-Thank you for considering contributing to Notulen! you can fork this repository and feel free to make pull request.
+Thank you for considering contributing to NoteTaker! you can fork this repository and feel free to make pull request.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Notulen package, please send an e-mail to Tarikh Agustia via [agustia.tarikh150@gmail.com](mailto:agustia.tarikh150@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within NoteTaker package, please send an e-mail to Tarikh Agustia via [agustia.tarikh150@gmail.com](mailto:agustia.tarikh150@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 

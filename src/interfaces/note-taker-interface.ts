@@ -1,4 +1,4 @@
-export interface NotulenInterface {
+export interface NoteTakerInterface {
   listen(): Promise<void>;
 
   stop(): Promise<void>;

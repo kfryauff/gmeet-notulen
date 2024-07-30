@@ -1,6 +1,6 @@
 import { getStreamOptions } from "puppeteer-stream";
 
-export interface NotulenConfig {
+export interface NoteTakerConfig {
   /**
    * The bot name.
    */
